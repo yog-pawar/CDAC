@@ -1,52 +1,54 @@
+package assign3;
+
 import java.util.Scanner;
 
-class TollBoothRevenueManager{
-	double cartoll;
-	double trucktoll;
-	double motortoll;
-	double noofcar;
-	double nooftruck;
-	double noofmotor;
-	double totalnoofvehicles;
-	double totalrevenue;
+class LoanAmortizationCalculator {
 	
+	private int principal;
+	private double Arate;
+	private double Lterm;
+	private double monthlypayment;
+	private double totalamountpaid;
 	Scanner sc = new Scanner(System.in);
-	void acceptRecord(){
-		System.out.println("Enter no of cars");
-		this.noofcar =sc.nextDouble();
-		System.out.println("Enter no of truck");
-		this.nooftruck = sc.nextDouble();
-		System.out.println("Enter no of motorcycles");
-		this.noofmotor = sc.nextDouble();
+	public void acceptRecord(){
+		
+		System.out.println("Enter principal");
+		principal = sc.nextInt();
+		System.out.println("Enter rate");
+		Arate = sc.nextDouble();
+		System.out.println("Enter term");
+		Lterm = sc.nextDouble();
+		
 	}
-	void setTollRates(){
-		System.out.println("Enter Car toll");
-		this.cartoll = sc.nextDouble();
-		System.out.println("Enter truck toll");
-		this.trucktoll = sc.nextDouble();
-		System.out.println("Enter motorcycle toll");
-		this.motortoll = sc.nextDouble();
-	}
-	void calculateRevenue(){
-		this.totalnoofvehicles = this.noofcar+this.nooftruck+this.noofmotor;
-		this.totalrevenue =(this.cartoll*this.noofcar)+(this.trucktoll*this.nooftruck)+(this.motortoll*this.noofmotor);
-	}
-	void printRecord() {
-		System.out.println("Total number of vehicles is " +this.totalnoofvehicles);
-		System.out.println("Total revenue is " +this.totalrevenue);
+	public void calculateMonthlyPayment() {
+		
+		double Mrate = Arate/12/100;
+		double months = Lterm*12;
+		double a = Mrate * Math.pow(1 + Mrate, months);
+		double b= (Math.pow(1 + Mrate, months) - 1);
+		this.monthlypayment = principal*(a/b);
+		this.totalamountpaid = monthlypayment*months;
+		
+			
 	}
 	
-}
-
-public class Program {
-
-	public static void main(String[] args) {
-		TollBoothRevenueManager trm = new TollBoothRevenueManager();
-		trm.acceptRecord();
-		trm.setTollRates();
-		trm.calculateRevenue();
-		trm.printRecord();
-
+	public void printRecord(){
+		
+		System.out.println("monthlypayment is  " +this.monthlypayment );
+		System.out.println("total amount paid " +this.totalamountpaid);
 	}
-
 }
+
+class Program{
+	
+	public static void main (String []args) {
+		LoanAmortizationCalculator cal = new LoanAmortizationCalculator();
+		
+		cal.acceptRecord();
+		cal.calculateMonthlyPayment();
+		cal.printRecord();
+		
+	}
+}
+
+
