@@ -1,4 +1,4 @@
-package assign4;
+package assignment4;
 
 import java.util.Scanner;
 
@@ -53,7 +53,8 @@ class CalUtill{
 	}
 	public void printRecord() {
 		c.cal();
-		System.out.println(c.getMonthlyPayment()+" "+c.getTotalAmountPaid());
+		System.out.println(c.getMonthlyPayment());
+		System.out.println(c.getTotalAmountPaid());
 	}
 	public int choice() {
 		System.out.println("enter 1 for setting values");
