@@ -1,42 +1,43 @@
-package assignment5_2;
+package assignment5_1;
 
-class Logger{
-	public String logger;
-	private static int instancenum = 0;
-	
-	public Logger() {
-		instancenum++;
-	}
-	
-	public int getInstance() {
-		return instancenum;
-	}
-	
-	public void log(String message){
-		this.logger=message;
-		//System.out.println(this.logger);
-	}
+class  InstanceCounter  {
+    // Static variable to track the number of instances
+    private static int instanceCount = 0;
 
-	public String getLog() {
-		return this.logger;
-	}
-	
-	public void clearLog() {
-		this.logger = " ";
-	}
+    // Constructor
+    public InstanceCounter() {
+        instanceCount++;
+    }
+
+    // Static method to get the instance count
+    public static int getInstanceCount() {
+        return instanceCount;
+    }
+
+    // Static method to reset the instance count
+    public static void resetInstanceCount() {
+        instanceCount = 0;
+    }
+ }
+
+    public class Main {
+    	
+    public static void main(String[] args) {
+        // Create instances
+        InstanceCounter counter1 = new InstanceCounter();
+        InstanceCounter counter2 = new InstanceCounter();
+        InstanceCounter counter3 = new InstanceCounter();
+
+        // Print instance count
+        System.out.println("Number of instances created: " +  InstanceCounter.getInstanceCount());
+
+        // Reset instance count
+        InstanceCounter.resetInstanceCount();
+
+        // Print instance count after reset
+        System.out.println("Number of instances created after reset: " + InstanceCounter.getInstanceCount());
+    }
 }
 
-public class Main {
 
-	public static void main(String[] args) {
-		Logger log = new Logger();
-		
-		System.out.println("number of instances "+log.getInstance());
-		log.getInstance();
-		log.log("Hello");
-		System.out.println("log message is "+log.getLog());
-		log.clearLog();
 
-	}
-
-}
