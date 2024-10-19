@@ -1,0 +1,33 @@
+                                       SQL Asignment 1
+table SALESPEOPLE
+
+1. create table SALESPEOPLE(Snum int(4), Sname varchar(10), City varchar(10), Comm float(3,2));
+
+2. insert into SALESPEOPLE values(1001,'Peel', 'London', .12);
+
+3. insert into SALESPEOPLE(Snum,Sname,City,Comm) values (1002, 'Serres','San Jose',.13);
+
+4. insert into SALESPEOPLE values(10004,'Motika','London',.11),(1007,'Ri
+    fkin','Barcelona',.15),(1003,'Axelrod','New York',.10);
+	
+	
+table CUSTOMERS
+
+1. create table CUSTOMERS(Cnum int(4),Cname varchar(10),City varchar(10)
+,Rating int(4),Snum int(4));
+
+2. insert into CUSTOMERS values(2001,'Hoffman','London',100,1001),(2002,
+'Giovanni','Rome',200,1003),(2003,'Liu','San Jose',200,1002),(2004,'Grass','
+Berlin',300,1002),(2006,'Clemens','London',100,1001),(2008,'Cisneros','San J
+ose',300,1007),(2007,'Pereira','Rome',100,1004);
+
+
+table ORDERS
+
+1. create table ORDERS (Onum int(4), Amt float(7,2), Odate date,Cnum int
+(4), Snum int(4));
+
+2. insert into ORDERS values(3001,18.69,'1990-10-03',2008,1007),(3003,76
+7.19,'1990-10-03',2001,1001),(3002,1900.10,'1990-10-03',2007,1004),(3005,516
+0.45,'1990-10-03',2003,1002),(3006,1098.16,'1990-10-03',2008,1007);
+Query OK, 5 rows affected (0.01 sec) 
