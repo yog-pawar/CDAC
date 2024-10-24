@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+<style>
+    *{
+         font-family: 'Quicksand';
+      }
+      #container{
+         width: 400px;
+         height: 400px;
+         text-align: center;
+         background-color: rgb(252, 248, 248);
+         margin-top: 100px;
+         margin-bottom: 150px;
+         margin-left: 120px;
+         margin-right: 120px;
+         border-radius: 25px;
+      }
+      body{
+         background-image: url(images/conactus.jpg);
+         margin-left: 100px;
+         background-position-x: right;
+         background-size: cover;
+      }
+      #heading{
+        padding-top: 20px;
+      }
+      input{
+         width: 70%;
+         margin-bottom: 25px;
+         padding-top: 15px;
+         padding-bottom: 15px;
+      }
+      button{
+         width: 35%;
+         padding-top: 10px;
+         padding-bottom: 10px;
+         background: white;
+         color: #060606;
+         border-color:#070707;
+         border-width: 1px;
+         border-style: solid;
+         cursor: pointer;
+         transition: background 0.4s;
+      }
+      button:hover{
+         background: rgb(249, 162, 162);
+         color: white;
+      }
+      a{
+        text-decoration: none;  
+      }
+
+</style>
+</head>
+<body>
+    <div id="container">
+        <h2 id="heading">Contact Us</h2>
+        <form>
+           <input type="text" placeholder="Name">
+           <input type="text" placeholder="Email">
+           <input type="text" placeholder="Address">
+           <button type="submit">SUBMIT</button>
+        </form>
+        <p>Don't have an account? <a href="#">Sign up now</a></p>
+    </div>
+</body>
+</html>
