@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+header{
+    padding: 20px;
+    height: 1000px;
+    background-image: url(images/backgnd.jpg);
+    background-size: cover;
+    background-position: center;
+    gap: 20px;
+}
+.div1 ul{
+    display: flex;
+    justify-content:right;
+    gap: 50px;
+    text-decoration:none ;
+}
+
+
+
+
+
+
+
